@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -259,15 +260,15 @@ export default function Navbar() {
             <div className="header-center">
               <nav className="main-nav">
                 <ul className="menu sf-arrows">
-                  <li className="megamenu-container active">
-                    <a href="index.html" className="sf-with-ul">
+                  <li className="megamenu-container ">
+                    <Link to="/" className="sf-with-ul">
                       Home
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="category.html" className="sf-with-ul_one">
+                    <Link to="/" className="sf-with-ul_one">
                       Product
-                    </a>
+                    </Link>
                     <div className="megamenu megamenu-sm">
                       <div className="row no-gutters">
                         <div className="col-md-6">
@@ -342,24 +343,24 @@ export default function Navbar() {
                     {/* End .megamenu megamenu-sm */}
                   </li>
                   <li>
-                    <a href="product.html" className="sf-with-ul">
+                    <Link to="/Aboutus" className="sf-with-ul">
                       About Us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="sf-with-ul">
+                    <Link to="/Aboutus" className="sf-with-ul">
                       Blog
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="blog.html" className="sf-with-ul">
+                    <Link to="/Aboutus" className="sf-with-ul">
                       Customer Care
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="blog.html" className="sf-with-ul">
+                    <Link to="/Contactus" className="sf-with-ul">
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 {/* End .menu */}
@@ -438,7 +439,7 @@ export default function Navbar() {
               <nav className="mobile-nav">
                 <ul className="mobile-menu">
                   <li className="active">
-                    <a href="index.html">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li>
                     <a href="category.html">Product</a>
@@ -475,9 +476,7 @@ export default function Navbar() {
                     </ul>
                   </li>
                   <li>
-                    <a href="product.html" className="sf-with-ul">
-                      About Us
-                    </a>
+                    <Link to="/Aboutus">About Us</Link>
                   </li>
                   <li>
                     <a href="#">blog</a>

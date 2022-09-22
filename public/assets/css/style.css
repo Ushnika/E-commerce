@@ -4,12 +4,11 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-size-adjust: 100%;
-}
-html,
-body {
   height: 100%;
 }
+
 body {
+  height: 100%;
   font-family: normal 300 1.4rem/1.86 "Poppins", sans-serif;
   color: #666;
   background-color: #fff;
@@ -1634,7 +1633,7 @@ blockquote.text-white cite span {
   }
 }
 .main-nav {
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
   display: none;
 }
 .menu,
@@ -17194,7 +17193,7 @@ blockquote.text-white cite span {
   }
 }
 .main-nav {
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
   display: none;
 }
 .menu,
