@@ -20,11 +20,7 @@ export default function Popup() {
                     height={15}
                   />
                   <h2 className="banner-title">
-                    get{" "}
-                    <span>
-                      25<light>%</light>
-                    </span>{" "}
-                    off
+                    get <span>25%</span> off
                   </h2>
                   <p>
                     Subscribe to the Molla eCommerce newsletter to receive

@@ -8,7 +8,7 @@ export default function Vision() {
         <div className="container another-container">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link to="/">Home</Link>
+              <a href="/index">Home</a>
             </li>
             <li className="breadcrumb-item active" aria-current="page">
               About us

@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet, NavLink } from "react-router-dom";
+import Footer from "./Footer";
+import Popup from "./Popup";
 
 export default function Navbar() {
   return (
@@ -261,106 +263,34 @@ export default function Navbar() {
               <nav className="main-nav">
                 <ul className="menu sf-arrows">
                   <li className="megamenu-container ">
-                    <Link to="/" className="sf-with-ul">
+                    <a href="/index" className="sf-with-ul">
                       Home
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/" className="sf-with-ul_one">
-                      Product
-                    </Link>
-                    <div className="megamenu megamenu-sm">
-                      <div className="row no-gutters">
-                        <div className="col-md-6">
-                          <div className="menu-col">
-                            <div className="menu-title">Product Details</div>
-                            {/* End .menu-title */}
-                            <ul>
-                              <li>
-                                <a href="product.html">Default</a>
-                              </li>
-                              <li>
-                                <a href="product-centered.html">Centered</a>
-                              </li>
-                              <li>
-                                <a href="product-extended.html">
-                                  <span>
-                                    Extended Info
-                                    <span className="tip tip-new">New</span>
-                                  </span>
-                                </a>
-                              </li>
-                              <li>
-                                <a href="product-gallery.html">Gallery</a>
-                              </li>
-                              <li>
-                                <a href="product-sticky.html">Sticky Info</a>
-                              </li>
-                              <li>
-                                <a href="product-sidebar.html">
-                                  Boxed With Sidebar
-                                </a>
-                              </li>
-                              <li>
-                                <a href="product-fullwidth.html">Full Width</a>
-                              </li>
-                              <li>
-                                <a href="product-masonry.html">
-                                  Masonry Sticky Info
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                          {/* End .menu-col */}
-                        </div>
-                        {/* End .col-md-6 */}
-                        <div className="col-md-6">
-                          <div className="banner banner-overlay">
-                            <a href="category.html">
-                              <img
-                                src="assets/images/menu/banner-2.jpg"
-                                alt="Banner"
-                              />
-                              <div className="banner-content banner-content-bottom">
-                                <div className="banner-title text-white">
-                                  New Trends
-                                  <br />
-                                  <span>
-                                    <strong>spring 2019</strong>
-                                  </span>
-                                </div>
-                                {/* End .banner-title */}
-                              </div>
-                              {/* End .banner-content */}
-                            </a>
-                          </div>
-                          {/* End .banner */}
-                        </div>
-                        {/* End .col-md-6 */}
-                      </div>
-                      {/* End .row */}
-                    </div>
-                    {/* End .megamenu megamenu-sm */}
+                    <a href="/" className="sf-with-ul">
+                      Shop
+                    </a>
                   </li>
                   <li>
-                    <Link to="/Aboutus" className="sf-with-ul">
+                    <a href="/about" className="sf-with-ul">
                       About Us
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link to="/Aboutus" className="sf-with-ul">
+                    <NavLink to="/blog" className="sf-with-ul">
                       Blog
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/Aboutus" className="sf-with-ul">
+                    <NavLink to="/Aboutus" className="sf-with-ul">
                       Customer Care
-                    </Link>
+                    </NavLink>
                   </li>
                   <li>
-                    <Link to="/Contactus" className="sf-with-ul">
+                    <a href="/contact" className="sf-with-ul">
                       Contact Us
-                    </Link>
+                    </a>
                   </li>
                 </ul>
                 {/* End .menu */}
@@ -439,53 +369,22 @@ export default function Navbar() {
               <nav className="mobile-nav">
                 <ul className="mobile-menu">
                   <li className="active">
-                    <Link to="/">Home</Link>
+                    <a href="/index">Home</a>
                   </li>
                   <li>
-                    <a href="category.html">Product</a>
-                    <ul>
-                      <li>
-                        <a href="product.html">Default</a>
-                      </li>
-                      <li>
-                        <a href="product-centered.html">Centered</a>
-                      </li>
-                      <li>
-                        <a href="product-extended.html">
-                          <span>
-                            Extended Info
-                            <span className="tip tip-new">New</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="product-gallery.html">Gallery</a>
-                      </li>
-                      <li>
-                        <a href="product-sticky.html">Sticky Info</a>
-                      </li>
-                      <li>
-                        <a href="product-sidebar.html">Boxed With Sidebar</a>
-                      </li>
-                      <li>
-                        <a href="product-fullwidth.html">Full Width</a>
-                      </li>
-                      <li>
-                        <a href="product-masonry.html">Masonry Sticky Info</a>
-                      </li>
-                    </ul>
+                    <a href="category.html">Shop</a>
                   </li>
                   <li>
-                    <Link to="/Aboutus">About Us</Link>
+                    <a href="/about">About Us</a>
                   </li>
                   <li>
-                    <a href="#">blog</a>
+                    <a href="/blog">Blog</a>
                   </li>
                   <li>
-                    <a href="blog.html">Customer Care</a>
+                    <NavLink to="blog.html">Customer Care</NavLink>
                   </li>
                   <li>
-                    <a href="elements-list.html">Contact Us</a>
+                    <a href="/contact">Contact Us</a>
                   </li>
                 </ul>
               </nav>
@@ -810,6 +709,9 @@ export default function Navbar() {
         {/* End .modal-dialog */}
       </div>
       {/* End .modal */}
+      {/* <Popup /> */}
+      <Outlet />
+      <Footer />
     </div>
   );
 }
