@@ -90,9 +90,12 @@ export default function TopProducts() {
           >
             <div className="products">
               <div className="row justify-content-center">
-                {TopSellingData.map((item) => {
+                {TopSellingData.map((item, index) => {
                   return (
-                    <div className="col-6 col-md-4 col-lg-3 col-xl-5col">
+                    <div
+                      className="col-6 col-md-4 col-lg-3 col-xl-5col"
+                      key={index}
+                    >
                       <div className="product product-11 text-center">
                         <figure className="product-media">
                           <span
@@ -166,9 +169,12 @@ export default function TopProducts() {
           >
             <div className="products">
               <div className="row justify-content-center">
-                {FurnitureItem.map((item) => {
+                {FurnitureItem.map((item, index) => {
                   return (
-                    <div className="col-6 col-md-4 col-lg-3 col-xl-5col">
+                    <div
+                      className="col-6 col-md-4 col-lg-3 col-xl-5col"
+                      key={index}
+                    >
                       {item.type == "Furniture" ? (
                         <div className="product product-11 text-center">
                           <figure className="product-media">
@@ -244,9 +250,12 @@ export default function TopProducts() {
           >
             <div className="products">
               <div className="row justify-content-center">
-                {DecorationItem.map((item) => {
+                {DecorationItem.map((item, index) => {
                   return (
-                    <div className="col-6 col-md-4 col-lg-3 col-xl-5col">
+                    <div
+                      className="col-6 col-md-4 col-lg-3 col-xl-5col"
+                      key={index}
+                    >
                       <div className="product product-11 text-center">
                         <figure className="product-media">
                           <span
@@ -334,9 +343,12 @@ export default function TopProducts() {
           >
             <div className="products">
               <div className="row justify-content-center">
-                {LightingItem.map((item) => {
+                {LightingItem.map((item, index) => {
                   return (
-                    <div className="col-6 col-md-4 col-lg-3 col-xl-5col">
+                    <div
+                      className="col-6 col-md-4 col-lg-3 col-xl-5col"
+                      key={index}
+                    >
                       <div className="product product-11 text-center">
                         <figure className="product-media">
                           <span

@@ -103,9 +103,9 @@ export default function TabProducts() {
                                 }
                             }'
             >
-              {CardData.map((item) => {
+              {CardData.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <div className="product product-11 text-center">
                       <figure className="product-media">
                         <span
@@ -199,9 +199,9 @@ export default function TabProducts() {
                                 }
                             }'
             >
-              {saleItem.map((item) => {
+              {saleItem.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <div className="product product-11 text-center">
                       <figure className="product-media">
                         <span
@@ -295,9 +295,9 @@ export default function TabProducts() {
                                 }
                             }'
             >
-              {topRatedItem.map((item) => {
+              {topRatedItem.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     {item.topRated == true ? (
                       <div className="product product-11 text-center">
                         <figure className="product-media">

@@ -263,7 +263,7 @@ export default function Navbar() {
               <nav className="main-nav">
                 <ul className="menu sf-arrows">
                   <li className="megamenu-container ">
-                    <a href="/index" className="sf-with-ul">
+                    <a href="/" className="sf-with-ul">
                       Home
                     </a>
                   </li>
@@ -278,9 +278,9 @@ export default function Navbar() {
                     </a>
                   </li>
                   <li>
-                    <NavLink to="/blog" className="sf-with-ul">
+                    <a href="/blog" className="sf-with-ul">
                       Blog
-                    </NavLink>
+                    </a>
                   </li>
                   <li>
                     <NavLink to="/Aboutus" className="sf-with-ul">

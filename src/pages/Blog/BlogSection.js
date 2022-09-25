@@ -1,19 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { BlogData } from "../../Data/BlogData";
+import Card from "./Card";
 
 export default function BlogSection() {
+  const [blog, setBlog] = useState(BlogData);
+  const [toggleOpen, setToggleOpen] = useState(1);
+  const lifestyleBlog = [];
+  const shoppingBlog = [];
+  const fashionBlog = [];
+  const travelBlog = [];
+  const hobbiesBlog = [];
+
+  var products = newArray(BlogData);
+
+  function newArray(products) {
+    for (var i = 0; i < products.length; i++) {
+      if (products[i].category === "Lifestyle") lifestyleBlog.push(products[i]);
+      if (products[i].category === "Shopping") shoppingBlog.push(products[i]);
+      if (products[i].category === "Fashion") fashionBlog.push(products[i]);
+      if (products[i].category === "Travel") travelBlog.push(products[i]);
+      if (products[i].category === "Hobbies") hobbiesBlog.push(products[i]);
+    }
+  }
+  console.log(lifestyleBlog);
+
+  // const categories = [...new Set(BlogData.map((Val) => Val.category))];
+
+  // const filterItem = (curcat) => {
+  //   console.log(curcat);
+  //   const newBlog = BlogData.filter((newVal) => {
+  //     return newVal.category === curcat;
+  //     // comparing category for displaying data
+  //   });
+  //   setBlog(newBlog);
+  //   console.log(blog, "abc");
+  // };
+
+  const toggleTab = (index) => {
+    setToggleOpen(index);
+  };
   return (
     <div>
       <nav aria-label="breadcrumb" className="breadcrumb-nav mb-2">
         <div className="container another-container">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <a href="index.html">Home</a>
+              <a href="/">Home</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="#">Blog</a>
-            </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              Grid 3 Columns
+              <a href="/blog">Blog</a>
             </li>
           </ol>
         </div>
@@ -23,488 +59,395 @@ export default function BlogSection() {
       <div className="container another-container">
         <nav className="blog-nav">
           <ul className="menu-cat entry-filter justify-content-center">
-            <li className="active">
-              <a href="#" data-filter="*">
-                All Blog Posts<span>9</span>
+            <li className="">
+              <a
+                href="#"
+                onClick={() => toggleTab(1)}
+                className={toggleOpen === 1 ? "tabs active-tabs" : "tabs"}
+              >
+                All Blog Posts <span>{BlogData.length}</span>
+              </a>
+            </li>
+            {/* {categories.map((Val, id) => {
+              return (
+                <li>
+                  <a href="#" key={id} onClick={() => filterItem(Val)}>
+                    {Val}
+                  </a>
+                </li>
+              );
+            })} */}
+            <li>
+              <a
+                href="#"
+                onClick={() => toggleTab(2)}
+                className={toggleOpen === 2 ? "tabs active-tabs" : "tabs"}
+              >
+                Lifestyle <span>{lifestyleBlog.length}</span>
               </a>
             </li>
             <li>
-              <a href="#" data-filter=".lifestyle">
-                Lifestyle<span>3</span>
+              <a
+                href="#"
+                data-filter=".shopping"
+                onClick={() => toggleTab(3)}
+                className={toggleOpen === 3 ? "tabs active-tabs" : "tabs"}
+              >
+                Shopping <span>{shoppingBlog.length}</span>
               </a>
             </li>
             <li>
-              <a href="#" data-filter=".shopping">
-                Shopping<span>1</span>
+              <a
+                href="#"
+                data-filter=".shopping"
+                onClick={() => toggleTab(4)}
+                className={toggleOpen === 4 ? "tabs active-tabs" : "tabs"}
+              >
+                Fashion <span>{fashionBlog.length}</span>
               </a>
             </li>
             <li>
-              <a href="#" data-filter=".fashion">
-                Fashion<span>2</span>
+              <a
+                href="#"
+                data-filter=".shopping"
+                onClick={() => toggleTab(5)}
+                className={toggleOpen === 5 ? "tabs active-tabs" : "tabs"}
+              >
+                Travel <span>{travelBlog.length}</span>
               </a>
             </li>
             <li>
-              <a href="#" data-filter=".travel">
-                Travel<span>4</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" data-filter=".hobbies">
-                Hobbies<span>2</span>
+              <a
+                href="#"
+                data-filter=".shopping"
+                onClick={() => toggleTab(6)}
+                className={toggleOpen === 6 ? "tabs active-tabs" : "tabs"}
+              >
+                Hobbies <span>{hobbiesBlog.length}</span>
               </a>
             </li>
           </ul>
           {/* End .blog-menu */}
         </nav>
         {/* End .blog-nav */}
-        <div className="entry-container max-col-3" data-layout="fitRows">
-          <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-1.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 22, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">2 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Cras ornare tristique elit.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Lifestyle</a>,<a href="#">Shopping</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Sed pretium, ligula sollicitudin laoreet viverra, tortor
-                    libero sodales leo, eget blandit nunc tortor eu nibh.
-                    Suspendisse potenti. Sed egestas vulputate ...
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
+        {/* <div className="entry-container max-col-3" data-layout="fitRows">
+          <Card data={blog} />
+        </div> */}
+        <div className="content-tabs">
+          <div
+            className={toggleOpen === 1 ? "content  active-content" : "content"}
+          >
+            <div className="entry-container max-col-3" data-layout="fitRows">
+              {BlogData.map((item) => {
+                return (
+                  <div>
+                    <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
+                      <article className="entry entry-grid text-center">
+                        <figure className="entry-media">
+                          <a href="single.html">
+                            <img src={item.img1} alt="image desc" />
+                          </a>
+                        </figure>
+                        {/* End .entry-media */}
+                        <div className="entry-body">
+                          <div className="entry-meta">
+                            <span className="entry-author">
+                              by <a href="#">{item.author}</a>
+                            </span>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.Date}</a>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.comments} Comments</a>
+                          </div>
+                          {/* End .entry-meta */}
+                          <h2 className="entry-title">
+                            <a href="single.html">{item.title}</a>
+                          </h2>
+                          {/* End .entry-title */}
+                          <div className="entry-cats">
+                            in <a href="#">{item.category}</a>
+                          </div>
+                          {/* End .entry-cats */}
+                          <div className="entry-content">
+                            <p>{item.concept}</p>
+                            <a href="single.html" className="read-more">
+                              Continue Reading
+                            </a>
+                          </div>
+                          {/* End .entry-content */}
+                        </div>
+                        {/* End .entry-body */}
+                      </article>
+                      {/* End .entry */}
+                    </div>
+                    {/* End .entry-item */}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          {/* End .entry-item */}
-          <div className="entry-item lifestyle col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media entry-video">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-2.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 21, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">0 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Vivamus vestibulum ntulla necante.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Lifestyle</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Morbi purus libero, faucibus commodo quis, gravida id, est.
-                    Vestibulumvolutpat, lacus a ultrices sagittis, mi neque
-                    euismod dui ...
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
+
+          <div
+            className={toggleOpen === 2 ? "content  active-content" : "content"}
+          >
+            <div className="entry-container max-col-3" data-layout="fitRows">
+              {lifestyleBlog.map((item) => {
+                return (
+                  <div>
+                    <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
+                      <article className="entry entry-grid text-center">
+                        <figure className="entry-media">
+                          <a href="single.html">
+                            <img src={item.img1} alt="image desc" />
+                          </a>
+                        </figure>
+                        {/* End .entry-media */}
+                        <div className="entry-body">
+                          <div className="entry-meta">
+                            <span className="entry-author">
+                              by <a href="#">{item.author}</a>
+                            </span>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.Date}</a>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.comments} Comments</a>
+                          </div>
+                          {/* End .entry-meta */}
+                          <h2 className="entry-title">
+                            <a href="single.html">{item.title}</a>
+                          </h2>
+                          {/* End .entry-title */}
+                          <div className="entry-cats">
+                            in <a href="#">{item.category}</a>
+                          </div>
+                          {/* End .entry-cats */}
+                          <div className="entry-content">
+                            <p>{item.concept}</p>
+                            <a href="single.html" className="read-more">
+                              Continue Reading
+                            </a>
+                          </div>
+                          {/* End .entry-content */}
+                        </div>
+                        {/* End .entry-body */}
+                      </article>
+                      {/* End .entry */}
+                    </div>
+                    {/* End .entry-item */}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          {/* End .entry-item */}
-          <div className="entry-item lifestyle fashion col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <div
-                  className="owl-carousel owl-simple owl-light owl-nav-inside"
-                  data-toggle="owl"
-                >
-                  <a href="single.html">
-                    <img
-                      src="assets/images/blog/grid/3cols/post-3.jpg"
-                      alt="image desc"
-                    />
-                  </a>
-                  <a href="single.html">
-                    <img
-                      src="assets/images/blog/grid/3cols/post-4.jpg"
-                      alt="image desc"
-                    />
-                  </a>
-                </div>
-                {/* End .owl-carousel */}
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 18, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">3 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Utaliquam sollicitudin leo.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Fashion</a>,<a href="#">Lifestyle</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Sed pretium, ligula sollicitudin laoreet viverra, tortor
-                    libero sodales leo, eget blandit nunc tortor eu nibh.
-                    Suspendisse potenti. Sed egestas ...{" "}
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
+
+          <div
+            className={toggleOpen === 3 ? "content  active-content" : "content"}
+          >
+            <div className="entry-container max-col-3" data-layout="fitRows">
+              {shoppingBlog.map((item) => {
+                return (
+                  <div>
+                    <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
+                      <article className="entry entry-grid text-center">
+                        <figure className="entry-media">
+                          <a href="single.html">
+                            <img src={item.img1} alt="image desc" />
+                          </a>
+                        </figure>
+                        {/* End .entry-media */}
+                        <div className="entry-body">
+                          <div className="entry-meta">
+                            <span className="entry-author">
+                              by <a href="#">{item.author}</a>
+                            </span>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.Date}</a>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.comments} Comments</a>
+                          </div>
+                          {/* End .entry-meta */}
+                          <h2 className="entry-title">
+                            <a href="single.html">{item.title}</a>
+                          </h2>
+                          {/* End .entry-title */}
+                          <div className="entry-cats">
+                            in <a href="#">{item.category}</a>
+                          </div>
+                          {/* End .entry-cats */}
+                          <div className="entry-content">
+                            <p>{item.concept}</p>
+                            <a href="single.html" className="read-more">
+                              Continue Reading
+                            </a>
+                          </div>
+                          {/* End .entry-content */}
+                        </div>
+                        {/* End .entry-body */}
+                      </article>
+                      {/* End .entry */}
+                    </div>
+                    {/* End .entry-item */}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          {/* End .entry-item */}
-          <div className="entry-item travel col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-4.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">Jane Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 15, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">4 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Fusce pellentesque suscipit.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Travel</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Praesent dapibus, neque id cursus faucibus, tortor neque
-                    egestas auguae, eu vulputate magna eros eu erat. Aliquam
-                    erat volutpat ...{" "}
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
+          <div
+            className={toggleOpen === 4 ? "content  active-content" : "content"}
+          >
+            <div className="entry-container max-col-3" data-layout="fitRows">
+              {fashionBlog.map((item) => {
+                return (
+                  <div>
+                    <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
+                      <article className="entry entry-grid text-center">
+                        <figure className="entry-media">
+                          <a href="single.html">
+                            <img src={item.img1} alt="image desc" />
+                          </a>
+                        </figure>
+                        {/* End .entry-media */}
+                        <div className="entry-body">
+                          <div className="entry-meta">
+                            <span className="entry-author">
+                              by <a href="#">{item.author}</a>
+                            </span>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.Date}</a>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.comments} Comments</a>
+                          </div>
+                          {/* End .entry-meta */}
+                          <h2 className="entry-title">
+                            <a href="single.html">{item.title}</a>
+                          </h2>
+                          {/* End .entry-title */}
+                          <div className="entry-cats">
+                            in <a href="#">{item.category}</a>
+                          </div>
+                          {/* End .entry-cats */}
+                          <div className="entry-content">
+                            <p>{item.concept}</p>
+                            <a href="single.html" className="read-more">
+                              Continue Reading
+                            </a>
+                          </div>
+                          {/* End .entry-content */}
+                        </div>
+                        {/* End .entry-body */}
+                      </article>
+                      {/* End .entry */}
+                    </div>
+                    {/* End .entry-item */}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          {/* End .entry-item */}
-          <div className="entry-item travel hobbies col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-5.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 11, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">2 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Aenean dignissim pellente squefelis.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Travel</a>,<a href="#">Hobbies</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
-                    porttitor, facilisis luctus, metus. Phasellus ultrices nulla
-                    quis nibh. Quisque lectus ...{" "}
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
+          <div
+            className={toggleOpen === 5 ? "content  active-content" : "content"}
+          >
+            <div className="entry-container max-col-3" data-layout="fitRows">
+              {travelBlog.map((item) => {
+                return (
+                  <div>
+                    <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
+                      <article className="entry entry-grid text-center">
+                        <figure className="entry-media">
+                          <a href="single.html">
+                            <img src={item.img1} alt="image desc" />
+                          </a>
+                        </figure>
+                        {/* End .entry-media */}
+                        <div className="entry-body">
+                          <div className="entry-meta">
+                            <span className="entry-author">
+                              by <a href="#">{item.author}</a>
+                            </span>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.Date}</a>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.comments} Comments</a>
+                          </div>
+                          {/* End .entry-meta */}
+                          <h2 className="entry-title">
+                            <a href="single.html">{item.title}</a>
+                          </h2>
+                          {/* End .entry-title */}
+                          <div className="entry-cats">
+                            in <a href="#">{item.category}</a>
+                          </div>
+                          {/* End .entry-cats */}
+                          <div className="entry-content">
+                            <p>{item.concept}</p>
+                            <a href="single.html" className="read-more">
+                              Continue Reading
+                            </a>
+                          </div>
+                          {/* End .entry-content */}
+                        </div>
+                        {/* End .entry-body */}
+                      </article>
+                      {/* End .entry */}
+                    </div>
+                    {/* End .entry-item */}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          {/* End .entry-item */}
-          <div className="entry-item hobbies col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-6.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 10, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">4 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Quisque volutpat mattiseros.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Hobbies</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-                    luctus, metus. Phasellus ultrices nulla quis nibh. Quisque
-                    lectus. Donec consectetuer ...{" "}
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
+          <div
+            className={toggleOpen === 6 ? "content  active-content" : "content"}
+          >
+            <div className="entry-container max-col-3" data-layout="fitRows">
+              {hobbiesBlog.map((item) => {
+                return (
+                  <div>
+                    <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
+                      <article className="entry entry-grid text-center">
+                        <figure className="entry-media">
+                          <a href="single.html">
+                            <img src={item.img1} alt="image desc" />
+                          </a>
+                        </figure>
+                        {/* End .entry-media */}
+                        <div className="entry-body">
+                          <div className="entry-meta">
+                            <span className="entry-author">
+                              by <a href="#">{item.author}</a>
+                            </span>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.Date}</a>
+                            <span className="meta-separator">|</span>
+                            <a href="#">{item.comments} Comments</a>
+                          </div>
+                          {/* End .entry-meta */}
+                          <h2 className="entry-title">
+                            <a href="single.html">{item.title}</a>
+                          </h2>
+                          {/* End .entry-title */}
+                          <div className="entry-cats">
+                            in <a href="#">{item.category}</a>
+                          </div>
+                          {/* End .entry-cats */}
+                          <div className="entry-content">
+                            <p>{item.concept}</p>
+                            <a href="single.html" className="read-more">
+                              Continue Reading
+                            </a>
+                          </div>
+                          {/* End .entry-content */}
+                        </div>
+                        {/* End .entry-body */}
+                      </article>
+                      {/* End .entry */}
+                    </div>
+                    {/* End .entry-item */}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          {/* End .entry-item */}
-          <div className="entry-item travel col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <div
-                  className="owl-carousel owl-simple owl-light owl-nav-inside"
-                  data-toggle="owl"
-                >
-                  <a href="single.html">
-                    <img
-                      src="assets/images/blog/grid/3cols/post-7.jpg"
-                      alt="image desc"
-                    />
-                  </a>
-                  <a href="single.html">
-                    <img
-                      src="assets/images/blog/grid/3cols/post-6.jpg"
-                      alt="image desc"
-                    />
-                  </a>
-                </div>
-                {/* End .owl-carousel */}
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 11, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">3 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Utaliquam sollicitudin leo.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Travel</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Praesent dapibus, neque id cursus faucibus, tortor neque
-                    egestas auguae, eu vulputate magna eros eu erat. Aliquam
-                    erat volutpat ...{" "}
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
-          </div>
-          {/* End .entry-item */}
-          <div className="entry-item fashion col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-8.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 08, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">0 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Quisque a lectus. </a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Fashion</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan
-                    porttitor, facilisis luctus, metus. Phasellus ultrices nulla
-                    quis nibh. Quisque lectus ...{" "}
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
-          </div>
-          {/* End .entry-item */}
-          <div className="entry-item travel col-sm-6 col-lg-4">
-            <article className="entry entry-grid text-center">
-              <figure className="entry-media">
-                <a href="single.html">
-                  <img
-                    src="assets/images/blog/grid/3cols/post-9.jpg"
-                    alt="image desc"
-                  />
-                </a>
-              </figure>
-              {/* End .entry-media */}
-              <div className="entry-body">
-                <div className="entry-meta">
-                  <span className="entry-author">
-                    by <a href="#">John Doe</a>
-                  </span>
-                  <span className="meta-separator">|</span>
-                  <a href="#">Nov 07, 2018</a>
-                  <span className="meta-separator">|</span>
-                  <a href="#">5 Comments</a>
-                </div>
-                {/* End .entry-meta */}
-                <h2 className="entry-title">
-                  <a href="single.html">Fusce lacinia arcu etnulla.</a>
-                </h2>
-                {/* End .entry-title */}
-                <div className="entry-cats">
-                  in <a href="#">Travel</a>
-                </div>
-                {/* End .entry-cats */}
-                <div className="entry-content">
-                  <p>
-                    Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-                    luctus, metus. Phasellus ultrices nulla quis nibh. Quisque
-                    lectus. Donec consectetuer ...
-                  </p>
-                  <a href="single.html" className="read-more">
-                    Continue Reading
-                  </a>
-                </div>
-                {/* End .entry-content */}
-              </div>
-              {/* End .entry-body */}
-            </article>
-            {/* End .entry */}
-          </div>
-          {/* End .entry-item */}
         </div>
         {/* End .entry-container */}
       </div>
@@ -515,7 +458,7 @@ export default function BlogSection() {
               class="page-link page-link-prev"
               href="#"
               aria-label="Previous"
-              tabindex="-1"
+              tabIndex="-1"
               aria-disabled="true"
             >
               <span aria-hidden="true">
