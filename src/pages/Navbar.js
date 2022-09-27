@@ -81,7 +81,7 @@ export default function Navbar() {
             </div>
             <div className="header-right">
               <div className="account">
-                <a href="dashboard.html" title="My account">
+                <a href="/myaccount" title="My account">
                   <div className="icon">
                     <i className="icon-user" />
                   </div>

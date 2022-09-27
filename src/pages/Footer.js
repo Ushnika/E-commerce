@@ -177,7 +177,7 @@ export default function Footer() {
                   {/* End .widget-title */}
                   <ul className="widget-list">
                     <li>
-                      <a href="about.html">About Molla</a>
+                      <a href="/about">About Molla</a>
                     </li>
                     <li>
                       <a href="#">How to shop on Molla</a>
@@ -186,10 +186,7 @@ export default function Footer() {
                       <a href="#">FAQ</a>
                     </li>
                     <li>
-                      <a href="contact.html">Contact us</a>
-                    </li>
-                    <li>
-                      <a href="login.html">Log in</a>
+                      <a href="/contact">Contact us</a>
                     </li>
                   </ul>
                   {/* End .widget-list */}
@@ -235,13 +232,13 @@ export default function Footer() {
                       <a href="#">Sign In</a>
                     </li>
                     <li>
-                      <a href="cart.html">View Cart</a>
+                      <a href="/cart">View Cart</a>
                     </li>
                     <li>
-                      <a href="#">My Wishlist</a>
+                      <a href="/wishlist">My Wishlist</a>
                     </li>
                     <li>
-                      <a href="#">Track My Order</a>
+                      <a href="/myaccount">Track My Order</a>
                     </li>
                     <li>
                       <a href="#">Help</a>
