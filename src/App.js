@@ -11,6 +11,8 @@ import Checkout from "./pages/Checkout";
 import Shop from "./pages/Shop";
 import MyAccount from "./pages/MyAccount";
 import FAQ from "./pages/FAQ";
+import Product from "./pages/Product";
+import BlogDetails from "./pages/BlogDetails";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/myaccount" element={<MyAccount />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/singleblog" element={<BlogDetails />} />
           </Route>
         </Routes>
       </Router>

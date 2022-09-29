@@ -1,6 +1,22 @@
 import React from "react";
+import { AccordianData } from "../../Data/AccordianData";
 
 export default function Question() {
+  const ShippingDetail = [];
+  const OrderDetail = [];
+  const PaymentDetail = [];
+
+  var data = Types(AccordianData);
+
+  function Types(data) {
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].faqHeading === "Shipping Information")
+        ShippingDetail.push(data[i]);
+      if (data[i].faqHeading === "Orders and Returns")
+        OrderDetail.push(data[i]);
+      if (data[i].faqHeading === "Payments") PaymentDetail.push(data[i]);
+    }
+  }
   return (
     <div>
       {/* End .page-header */}
@@ -28,147 +44,39 @@ export default function Question() {
           <h2 className="title text-center mb-3">Shipping Information</h2>
           {/* End .title */}
           <div className="accordion accordion-rounded" id="accordion-1">
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading-1">
-                <h2 className="card-title">
-                  <a
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse-1"
-                    aria-expanded="true"
-                    aria-controls="collapse-1"
-                  >
-                    How will my parcel be delivered?
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse-1"
-                className="collapse show"
-                aria-labelledby="heading-1"
-                data-parent="#accordion-1"
-              >
-                <div className="card-body">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Donec nec justo eget felis
-                  facilisis fermentum. Aliquam porttitor mauris sit amet orci.
-                  Aenean dignissim pellentesque felis. Phasellus ultrices nulla
-                  quis nibh. Quisque a lectus. Donec consectetuer ligula
-                  vulputate sem tristique cursus. Nam nulla quam, gravida non,
-                  commodo a, sodales sit amet, nisi.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
-            {/* End .card */}
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading-2">
-                <h2 className="card-title">
-                  <a
-                    className="collapsed"
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse-2"
-                    aria-expanded="false"
-                    aria-controls="collapse-2"
-                  >
-                    Do I pay for delivery?
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse-2"
-                className="collapse"
-                aria-labelledby="heading-2"
-                data-parent="#accordion-1"
-              >
-                <div className="card-body">
-                  Ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                  odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                  turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                  posuere a, pede. Donec nec justo eget felis facilisis
-                  fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing
-                  elit. Donec odio. Quisque volutpat mattis eros.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
-            {/* End .card */}
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading-3">
-                <h2 className="card-title">
-                  <a
-                    className="collapsed"
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse-3"
-                    aria-expanded="false"
-                    aria-controls="collapse-3"
-                  >
-                    Will I be charged customs fees?
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse-3"
-                className="collapse"
-                aria-labelledby="heading-3"
-                data-parent="#accordion-1"
-              >
-                <div className="card-body">
-                  Nullam malesuada erat ut turpis. Suspendisse urna nibh,
-                  viverra non, semper suscipit, posuere a, pede. Donec nec justo
-                  eget felis facilisis fermentum.Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Lorem ipsum dolor sit amet, consectetuer
-                  adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
-            {/* End .card */}
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading-4">
-                <h2 className="card-title">
-                  <a
-                    className="collapsed"
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse-4"
-                    aria-expanded="false"
-                    aria-controls="collapse-4"
-                  >
-                    My item has become faulty
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse-4"
-                className="collapse"
-                aria-labelledby="heading-4"
-                data-parent="#accordion-1"
-              >
-                <div className="card-body">
-                  Nullam malesuada erat ut turpis. Suspendisse urna nibh,
-                  viverra non, semper suscipit, posuere a, pede. Donec nec justo
-                  eget felis facilisis fermentum.Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Lorem ipsum dolor sit amet, consectetuer
-                  adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
+            {ShippingDetail.map((list) => {
+              return (
+                <>
+                  <div className="card card-box card-sm bg-light">
+                    <div className="card-header" id={list.headerID}>
+                      <h2 className="card-title">
+                        <a
+                          className="collapsed"
+                          role="button"
+                          data-toggle="collapse"
+                          href={list.href}
+                          aria-expanded="false"
+                          aria-controls={list.ariaControls}
+                        >
+                          {list.question}
+                        </a>
+                      </h2>
+                    </div>
+                    {/* End .card-header */}
+                    <div
+                      id={list.answerID}
+                      className="collapse"
+                      aria-labelledby={list.aria}
+                      data-parent={list.data}
+                    >
+                      <div className="card-body">{list.answer}</div>
+                      {/* End .card-body */}
+                    </div>
+                    {/* End .collapse */}
+                  </div>
+                </>
+              );
+            })}
             {/* End .card */}
           </div>
           {/* End .accordion */}
@@ -177,109 +85,39 @@ export default function Question() {
           <h2 className="title text-center mb-3">Orders and Returns</h2>
           {/* End .title */}
           <div className="accordion accordion-rounded" id="accordion-2">
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading2-1">
-                <h2 className="card-title">
-                  <a
-                    className="collapsed"
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse2-1"
-                    aria-expanded="false"
-                    aria-controls="collapse2-1"
-                  >
-                    Tracking my order
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse2-1"
-                className="collapse"
-                aria-labelledby="heading2-1"
-                data-parent="#accordion-2"
-              >
-                <div className="card-body">
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros. Nullam malesuada
-                  erat ut turpis. Suspendisse urna nibh, viverra non, semper
-                  suscipit, posuere a, pede. Donec nec justo eget felis
-                  facilisis fermentum.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
-            {/* End .card */}
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading2-2">
-                <h2 className="card-title">
-                  <a
-                    className="collapsed"
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse2-2"
-                    aria-expanded="false"
-                    aria-controls="collapse2-2"
-                  >
-                    I haven’t received my order
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse2-2"
-                className="collapse"
-                aria-labelledby="heading2-2"
-                data-parent="#accordion-2"
-              >
-                <div className="card-body">
-                  Ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                  odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                  turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                  posuere a, pede. Donec nec justo eget felis facilisis
-                  fermentum.Lorem ipsum dolor sit amet, consectetuer adipiscing
-                  elit. Donec odio. Quisque volutpat mattis eros.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
-            {/* End .card */}
-            <div className="card card-box card-sm bg-light">
-              <div className="card-header" id="heading2-3">
-                <h2 className="card-title">
-                  <a
-                    className="collapsed"
-                    role="button"
-                    data-toggle="collapse"
-                    href="#collapse2-3"
-                    aria-expanded="false"
-                    aria-controls="collapse2-3"
-                  >
-                    How can I return an item?
-                  </a>
-                </h2>
-              </div>
-              {/* End .card-header */}
-              <div
-                id="collapse2-3"
-                className="collapse"
-                aria-labelledby="heading2-3"
-                data-parent="#accordion-2"
-              >
-                <div className="card-body">
-                  Nullam malesuada erat ut turpis. Suspendisse urna nibh,
-                  viverra non, semper suscipit, posuere a, pede. Donec nec justo
-                  eget felis facilisis fermentum.Lorem ipsum dolor sit amet,
-                  consectetuer adipiscing elit. Donec odio. Quisque volutpat
-                  mattis eros. Lorem ipsum dolor sit amet, consectetuer
-                  adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                </div>
-                {/* End .card-body */}
-              </div>
-              {/* End .collapse */}
-            </div>
+            {OrderDetail.map((list) => {
+              return (
+                <>
+                  <div className="card card-box card-sm bg-light">
+                    <div className="card-header" id={list.headerID}>
+                      <h2 className="card-title">
+                        <a
+                          className="collapsed"
+                          role="button"
+                          data-toggle="collapse"
+                          href={list.href}
+                          aria-expanded="false"
+                          aria-controls={list.ariaControls}
+                        >
+                          {list.question}
+                        </a>
+                      </h2>
+                    </div>
+                    {/* End .card-header */}
+                    <div
+                      id={list.answerID}
+                      className="collapse"
+                      aria-labelledby={list.aria}
+                      data-parent={list.data}
+                    >
+                      <div className="card-body">{list.answer}</div>
+                      {/* End .card-body */}
+                    </div>
+                    {/* End .collapse */}
+                  </div>
+                </>
+              );
+            })}
             {/* End .card */}
           </div>
           {/* End .accordion */}
@@ -287,6 +125,42 @@ export default function Question() {
           {/* Payments Questions */}
           <h2 className="title text-center mb-3">Payments</h2>
           {/* End .title */}
+          <div className="accordion accordion-rounded" id="accordion-3">
+            {ShippingDetail.map((list) => {
+              return (
+                <>
+                  <div className="card card-box card-sm bg-light">
+                    <div className="card-header" id={list.headerID}>
+                      <h2 className="card-title">
+                        <a
+                          className="collapsed"
+                          role="button"
+                          data-toggle="collapse"
+                          href={list.href}
+                          aria-expanded="false"
+                          // aria-controls={list.ariaControls}
+                        >
+                          {list.question}
+                        </a>
+                      </h2>
+                    </div>
+                    {/* End .card-header */}
+                    <div
+                      id={list.answerID}
+                      className="collapse"
+                      aria-labelledby={list.aria}
+                      data-parent={list.data}
+                    >
+                      <div className="card-body">{list.answer}</div>
+                      {/* End .card-body */}
+                    </div>
+                    {/* End .collapse */}
+                  </div>
+                </>
+              );
+            })}
+            {/* End .card */}
+          </div>
           <div className="accordion accordion-rounded" id="accordion-3">
             <div className="card card-box card-sm bg-light">
               <div className="card-header" id="heading3-1">
