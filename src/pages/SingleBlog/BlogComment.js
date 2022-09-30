@@ -1,6 +1,12 @@
 import React from "react";
+import { BlogData } from "../../Data/BlogData";
 
 export default function BlogComment() {
+  let relatedBlog = [];
+  const value = BlogData.length / 2;
+  for (let i = 0; i < value; i++) {
+    relatedBlog.push(BlogData[i]);
+  }
   return (
     <div>
       <div className="related-posts">
@@ -27,121 +33,36 @@ export default function BlogComment() {
                                         }
                                     }'
         >
-          <article className="entry entry-grid">
-            <figure className="entry-media">
-              <a href="single.html">
-                <img
-                  src="assets/images/blog/grid/3cols/post-1.jpg"
-                  alt="image desc"
-                />
-              </a>
-            </figure>
-            {/* End .entry-media */}
-            <div className="entry-body">
-              <div className="entry-meta">
-                <a href="#">Nov 22, 2018</a>
-                <span className="meta-separator">|</span>
-                <a href="#">2 Comments</a>
-              </div>
-              {/* End .entry-meta */}
-              <h2 className="entry-title">
-                <a href="single.html">Cras ornare tristique elit.</a>
-              </h2>
-              {/* End .entry-title */}
-              <div className="entry-cats">
-                in <a href="#">Lifestyle</a>,<a href="#">Shopping</a>
-              </div>
-              {/* End .entry-cats */}
-            </div>
-            {/* End .entry-body */}
-          </article>
-          {/* End .entry */}
-          <article className="entry entry-grid">
-            <figure className="entry-media">
-              <a href="single.html">
-                <img
-                  src="assets/images/blog/grid/3cols/post-2.jpg"
-                  alt="image desc"
-                />
-              </a>
-            </figure>
-            {/* End .entry-media */}
-            <div className="entry-body">
-              <div className="entry-meta">
-                <a href="#">Nov 21, 2018</a>
-                <span className="meta-separator">|</span>
-                <a href="#">0 Comments</a>
-              </div>
-              {/* End .entry-meta */}
-              <h2 className="entry-title">
-                <a href="single.html">Vivamus ntulla necante.</a>
-              </h2>
-              {/* End .entry-title */}
-              <div className="entry-cats">
-                in <a href="#">Lifestyle</a>
-              </div>
-              {/* End .entry-cats */}
-            </div>
-            {/* End .entry-body */}
-          </article>
-          {/* End .entry */}
-          <article className="entry entry-grid">
-            <figure className="entry-media">
-              <a href="single.html">
-                <img
-                  src="assets/images/blog/grid/3cols/post-3.jpg"
-                  alt="image desc"
-                />
-              </a>
-            </figure>
-            {/* End .entry-media */}
-            <div className="entry-body">
-              <div className="entry-meta">
-                <a href="#">Nov 18, 2018</a>
-                <span className="meta-separator">|</span>
-                <a href="#">3 Comments</a>
-              </div>
-              {/* End .entry-meta */}
-              <h2 className="entry-title">
-                <a href="single.html">Utaliquam sollicitudin leo.</a>
-              </h2>
-              {/* End .entry-title */}
-              <div className="entry-cats">
-                in <a href="#">Fashion</a>,<a href="#">Lifestyle</a>
-              </div>
-              {/* End .entry-cats */}
-            </div>
-            {/* End .entry-body */}
-          </article>
-          {/* End .entry */}
-          <article className="entry entry-grid">
-            <figure className="entry-media">
-              <a href="single.html">
-                <img
-                  src="assets/images/blog/grid/3cols/post-4.jpg"
-                  alt="image desc"
-                />
-              </a>
-            </figure>
-            {/* End .entry-media */}
-            <div className="entry-body">
-              <div className="entry-meta">
-                <a href="#">Nov 15, 2018</a>
-                <span className="meta-separator">|</span>
-                <a href="#">4 Comments</a>
-              </div>
-              {/* End .entry-meta */}
-              <h2 className="entry-title">
-                <a href="single.html">Fusce pellentesque suscipit.</a>
-              </h2>
-              {/* End .entry-title */}
-              <div className="entry-cats">
-                in <a href="#">Travel</a>
-              </div>
-              {/* End .entry-cats */}
-            </div>
-            {/* End .entry-body */}
-          </article>
+          {relatedBlog.map((list, i) => {
+            return (
+              <article className="entry entry-grid" key={i}>
+                <figure className="entry-media">
+                  <a href="/singleblog">
+                    <img src={list.img1} alt="image desc" />
+                  </a>
+                </figure>
+                {/* End .entry-media */}
+                <div className="entry-body">
+                  <div className="entry-meta">
+                    <a href="#">{list.Date}</a>
+                    <span className="meta-separator">|</span>
+                    <a href="#">{list.comments} Comments</a>
+                  </div>
+                  {/* End .entry-meta */}
+                  <h2 className="entry-title">
+                    <a href="/singleblog">{list.title}</a>
+                  </h2>
+                  {/* End .entry-title */}
+                  <div className="entry-cats">
+                    in <a href="#">{list.category}</a>
+                  </div>
+                  {/* End .entry-cats */}
+                </div>
+                {/* End .entry-body */}
+              </article>
+            );
+          })}
+
           {/* End .entry */}
         </div>
         {/* End .owl-carousel */}

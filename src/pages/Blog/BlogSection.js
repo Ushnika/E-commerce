@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BlogData } from "../../Data/BlogData";
-import Card from "./Card";
 
 export default function BlogSection() {
   const [blog, setBlog] = useState(BlogData);
@@ -144,7 +143,7 @@ export default function BlogSection() {
                     <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
                       <article className="entry entry-grid text-center">
                         <figure className="entry-media">
-                          <a href="single.html">
+                          <a href="/singleblog">
                             <img src={item.img1} alt="image desc" />
                           </a>
                         </figure>
@@ -161,7 +160,7 @@ export default function BlogSection() {
                           </div>
                           {/* End .entry-meta */}
                           <h2 className="entry-title">
-                            <a href="single.html">{item.title}</a>
+                            <a href="/singleblog">{item.title}</a>
                           </h2>
                           {/* End .entry-title */}
                           <div className="entry-cats">
@@ -170,7 +169,7 @@ export default function BlogSection() {
                           {/* End .entry-cats */}
                           <div className="entry-content">
                             <p>{item.concept}</p>
-                            <a href="single.html" className="read-more">
+                            <a href="/singleblog" className="read-more">
                               Continue Reading
                             </a>
                           </div>
@@ -197,7 +196,7 @@ export default function BlogSection() {
                     <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
                       <article className="entry entry-grid text-center">
                         <figure className="entry-media">
-                          <a href="single.html">
+                          <a href="/singleblog">
                             <img src={item.img1} alt="image desc" />
                           </a>
                         </figure>
@@ -214,7 +213,7 @@ export default function BlogSection() {
                           </div>
                           {/* End .entry-meta */}
                           <h2 className="entry-title">
-                            <a href="single.html">{item.title}</a>
+                            <a href="/singleblog">{item.title}</a>
                           </h2>
                           {/* End .entry-title */}
                           <div className="entry-cats">
@@ -223,7 +222,7 @@ export default function BlogSection() {
                           {/* End .entry-cats */}
                           <div className="entry-content">
                             <p>{item.concept}</p>
-                            <a href="single.html" className="read-more">
+                            <a href="/singleblog" className="read-more">
                               Continue Reading
                             </a>
                           </div>
@@ -250,7 +249,7 @@ export default function BlogSection() {
                     <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
                       <article className="entry entry-grid text-center">
                         <figure className="entry-media">
-                          <a href="single.html">
+                          <a href="/singleblog">
                             <img src={item.img1} alt="image desc" />
                           </a>
                         </figure>
@@ -267,7 +266,7 @@ export default function BlogSection() {
                           </div>
                           {/* End .entry-meta */}
                           <h2 className="entry-title">
-                            <a href="single.html">{item.title}</a>
+                            <a href="/singleblog">{item.title}</a>
                           </h2>
                           {/* End .entry-title */}
                           <div className="entry-cats">
@@ -276,7 +275,7 @@ export default function BlogSection() {
                           {/* End .entry-cats */}
                           <div className="entry-content">
                             <p>{item.concept}</p>
-                            <a href="single.html" className="read-more">
+                            <a href="/singleblog" className="read-more">
                               Continue Reading
                             </a>
                           </div>
@@ -302,7 +301,7 @@ export default function BlogSection() {
                     <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
                       <article className="entry entry-grid text-center">
                         <figure className="entry-media">
-                          <a href="single.html">
+                          <a href="/singleblog">
                             <img src={item.img1} alt="image desc" />
                           </a>
                         </figure>
@@ -319,7 +318,7 @@ export default function BlogSection() {
                           </div>
                           {/* End .entry-meta */}
                           <h2 className="entry-title">
-                            <a href="single.html">{item.title}</a>
+                            <a href="/singleblog">{item.title}</a>
                           </h2>
                           {/* End .entry-title */}
                           <div className="entry-cats">
@@ -328,7 +327,7 @@ export default function BlogSection() {
                           {/* End .entry-cats */}
                           <div className="entry-content">
                             <p>{item.concept}</p>
-                            <a href="single.html" className="read-more">
+                            <a href="/singleblog" className="read-more">
                               Continue Reading
                             </a>
                           </div>
@@ -354,7 +353,7 @@ export default function BlogSection() {
                     <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
                       <article className="entry entry-grid text-center">
                         <figure className="entry-media">
-                          <a href="single.html">
+                          <a href="/singleblog">
                             <img src={item.img1} alt="image desc" />
                           </a>
                         </figure>
@@ -371,7 +370,7 @@ export default function BlogSection() {
                           </div>
                           {/* End .entry-meta */}
                           <h2 className="entry-title">
-                            <a href="single.html">{item.title}</a>
+                            <a href="/singleblog">{item.title}</a>
                           </h2>
                           {/* End .entry-title */}
                           <div className="entry-cats">
@@ -380,7 +379,7 @@ export default function BlogSection() {
                           {/* End .entry-cats */}
                           <div className="entry-content">
                             <p>{item.concept}</p>
-                            <a href="single.html" className="read-more">
+                            <a href="/singleblog" className="read-more">
                               Continue Reading
                             </a>
                           </div>
@@ -406,7 +405,7 @@ export default function BlogSection() {
                     <div className="entry-item lifestyle shopping col-sm-6 col-lg-4">
                       <article className="entry entry-grid text-center">
                         <figure className="entry-media">
-                          <a href="single.html">
+                          <a href="/singleblog">
                             <img src={item.img1} alt="image desc" />
                           </a>
                         </figure>
@@ -423,7 +422,7 @@ export default function BlogSection() {
                           </div>
                           {/* End .entry-meta */}
                           <h2 className="entry-title">
-                            <a href="single.html">{item.title}</a>
+                            <a href="/singleblog">{item.title}</a>
                           </h2>
                           {/* End .entry-title */}
                           <div className="entry-cats">
@@ -432,7 +431,7 @@ export default function BlogSection() {
                           {/* End .entry-cats */}
                           <div className="entry-content">
                             <p>{item.concept}</p>
-                            <a href="single.html" className="read-more">
+                            <a href="/singleblog" className="read-more">
                               Continue Reading
                             </a>
                           </div>

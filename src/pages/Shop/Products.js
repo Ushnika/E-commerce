@@ -46,7 +46,7 @@ export default function Products() {
                           {item.label}
                         </span>
                       )}
-                      <a href="product.html">
+                      <a href="/product">
                         <img
                           src={item.img}
                           alt="Product image"
@@ -83,7 +83,7 @@ export default function Products() {
                       </div>
                       {/* End .product-cat */}
                       <h3 className="product-title">
-                        <a href="product.html">{item.name}</a>
+                        <a href="/product">{item.name}</a>
                       </h3>
                       {/* End .product-title */}
                       <div className="product-price">{item.price}</div>
