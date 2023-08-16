@@ -1,0 +1,47 @@
+.error {
+  color: #ff0000;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 40px;
+}
+
+.textfield_icon {
+  position: relative;
+}
+
+input.input-error {
+  border-color: #fc8181;
+}
+
+button:disabled {
+  opacity: 0.35;
+}
+.form-footer {
+  display: block;
+}
+
+.footer-part {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  padding-top: 0.6rem;
+}
+.form-footer-part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.6rem;
+}

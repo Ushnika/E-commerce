@@ -1,0 +1,12 @@
+.checkout .form-control {
+  margin-bottom: 0;
+}
+
+.billing_textfield {
+  margin-bottom: 1rem;
+}
+
+.table.table-summary .table-product:hover,
+.table.table-summary .table-product:focus {
+  color: #fdb811;
+}

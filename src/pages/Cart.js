@@ -1,13 +1,15 @@
 import React from "react";
-import CartDetails from "./Cart/CartDetails";
+import CartDetails from "../components/Cart/CartDetails";
 
-export default function Cart() {
+const Cart = () => {
   return (
     <div>
       <CartDetails />
       <button id="scroll-top" title="Back to Top">
-        <i class="icon-arrow-up"></i>
+        <i className="icon-arrow-up"></i>
       </button>
     </div>
   );
-}
+};
+
+export default Cart;

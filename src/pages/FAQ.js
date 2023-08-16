@@ -1,10 +1,12 @@
 import React from "react";
-import Question from "./FAQ/Question";
+import Question from "../components/Faq/Question";
 
-export default function FAQ() {
+const Faq = () => {
   return (
     <div>
       <Question />
     </div>
   );
-}
+};
+
+export default Faq;

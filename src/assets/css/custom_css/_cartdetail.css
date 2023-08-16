@@ -1,0 +1,40 @@
+.alert_icon {
+  font-size: 50px;
+  color: red;
+}
+
+.icontext {
+  text-align: center;
+}
+
+.modal-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.cart-product-quantity {
+  position: relative;
+  text-align: center;
+}
+
+.add-quantity {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.remove-quantity {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.table td {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

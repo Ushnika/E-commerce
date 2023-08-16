@@ -1,0 +1,29 @@
+.product-media-home {
+  position: relative;
+  display: block;
+  background-color: #0000;
+  margin-bottom: 0;
+  overflow: hidden;
+  width: 95%;
+}
+
+.product.product-11 .btn-product-icon:hover,
+.product.product-11 .btn-product-icon:focus {
+  background-color: #fdb811;
+  border-color: #fdb811;
+}
+
+.product.product-11 a:hover {
+  color: #fdb811;
+}
+
+.product-media {
+  background-color: #f4f4f4;
+}
+.product-limit-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+}

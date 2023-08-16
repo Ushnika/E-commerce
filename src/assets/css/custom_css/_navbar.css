@@ -1,0 +1,53 @@
+.header-intro-clearance div.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 3rem;
+  cursor: pointer;
+}
+.header-intro-clearance div.icon:hover {
+  color: var(--colorCustom);
+}
+
+.header-intro-clearance .account,
+.header-intro-clearance .wishlist,
+.cart {
+  padding-left: 2rem;
+  display: flex;
+  align-self: stretch;
+  align-items: initial;
+}
+.icon-section {
+  font-size: 3rem;
+  color: #333;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header-intro-clearance .counter {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+  background-color: var(--colorCustom);
+  min-width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+  color: #fff;
+}
+
+@media screen and (max-width: 399px) {
+  .header-intro-clearance .account,
+  .wishlist {
+    display: none;
+  }
+}

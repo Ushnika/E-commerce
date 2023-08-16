@@ -1,10 +1,12 @@
 import React from "react";
-import SingleProduct from "./SingleProduct/SingleProduc";
+import SingleProduct from "../components/SingleProduct/SingleProduct";
 
-export default function Product() {
+const Product = () => {
   return (
     <div>
       <SingleProduct />
     </div>
   );
-}
+};
+
+export default Product;

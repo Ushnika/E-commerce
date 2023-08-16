@@ -1,0 +1,26 @@
+.product.product-11 .btn-product:hover,
+.product.product-11 .btn-product:focus {
+  color: #fff;
+  border-color: #fdb811;
+  background-color: #fdb811;
+}
+
+/* Slider */
+.slick-prev,
+.slick-next {
+  top: 30%;
+}
+
+.intro-title {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .intro-title {
+    width: 60%;
+  }
+}
+@media (min-width: 992px) {
+  .intro-title {
+    width: 40%;
+  }
+}

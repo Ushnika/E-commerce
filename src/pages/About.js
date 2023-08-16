@@ -1,20 +1,19 @@
 import React from "react";
-import Aboutus from "./About/Aboutus";
-import Team from "./About/Team";
-import Vision from "./About/Vision";
-import Navbar from "./Navbar";
-import Popup from "./Popup";
-import Footer from "./Footer";
+import Aboutus from "../components/About/Aboutus";
+import Brand from "../components/About/Brand";
+import Vision from "../components/About/Vision";
 
-export default function About() {
+const About = () => {
   return (
     <div>
       <Vision />
       <Aboutus />
-      <Team />
+      <Brand />
       <button id="scroll-top" title="Back to Top">
-        <i class="icon-arrow-up"></i>
+        <i className="icon-arrow-up"></i>
       </button>
     </div>
   );
-}
+};
+
+export default About;

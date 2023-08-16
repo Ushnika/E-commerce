@@ -1,13 +1,15 @@
 import React from "react";
-import WishlistSection from "./Wishlist/WishlistSection";
+import WishlistSection from "../components/Wishlist/WishlistSection";
 
-export default function Wishlist() {
+const Wishlist = () => {
   return (
     <div>
       <WishlistSection />
       <button id="scroll-top" title="Back to Top">
-        <i class="icon-arrow-up"></i>
+        <i className="icon-arrow-up"></i>
       </button>
     </div>
   );
-}
+};
+
+export default Wishlist;

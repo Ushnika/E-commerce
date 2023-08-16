@@ -1,13 +1,15 @@
 import React from "react";
-import BlogSection from "./Blog/BlogSection";
+import BlogSection from "../components/Blog/BlogSection";
 
-export default function Blog() {
+const Blog = () => {
   return (
     <div>
       <BlogSection />
       <button id="scroll-top" title="Back to Top">
-        <i class="icon-arrow-up"></i>
+        <i className="icon-arrow-up"></i>
       </button>
     </div>
   );
-}
+};
+
+export default Blog;

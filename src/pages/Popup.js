@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Popup() {
+const Popup = () => {
   return (
     <div>
       <div
@@ -23,7 +23,7 @@ export default function Popup() {
                     get <span>25%</span> off
                   </h2>
                   <p>
-                    Subscribe to the Molla eCommerce newsletter to receive
+                    Subscribe to the Gokyo eCommerce newsletter to receive
                     timely updates from your favorite products.
                   </p>
                   <form action="#">
@@ -74,4 +74,6 @@ export default function Popup() {
       </div>
     </div>
   );
-}
+};
+
+export default Popup;

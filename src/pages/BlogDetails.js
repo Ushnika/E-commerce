@@ -1,10 +1,12 @@
 import React from "react";
-import Blogss from "./SingleBlog/Blogss";
+import Blogss from "../components/SingleBlog/Blogss";
 
-export default function BlogDetails() {
+const BlogDetails = () => {
   return (
     <div>
       <Blogss />
     </div>
   );
-}
+};
+
+export default BlogDetails;

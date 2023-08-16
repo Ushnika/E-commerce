@@ -1,0 +1,9 @@
+.none-item {
+  color: red;
+  font-size: 30px;
+  margin-top: 5rem;
+}
+
+.product.product-7 .btn-product {
+  cursor: pointer;
+}

@@ -1,0 +1,182 @@
+/* default color varible set for global changing easily */
+:root {
+  /* --colorCustom: #005d7c; */
+  /* --colorCustom: #00475f; */
+  --colorCustom: #006385;
+}
+
+/* custom colors */
+/* highlights and selections*/
+::selection {
+  background-color: var(--colorCustom) !important;
+}
+
+/* anchor tags hover and focus */
+a:hover,
+a:focus {
+  color: var(--colorCustom) !important;
+}
+
+/* whishlist counter */
+.wishlist .wishlist-count {
+  background-color: var(--colorCustom) !important;
+}
+
+/* cart counter */
+.cart-dropdown .cart-count {
+  background-color: var(--colorCustom) !important;
+}
+.cart-dropdown:hover .dropdown-toggle,
+.cart-dropdown.show .dropdown-toggle {
+  color: var(--colorCustom) !important;
+}
+
+/* category dropdown */
+.category-dropdown:not(.is-on):hover .dropdown-toggle {
+  background-color: var(--colorCustom) !important;
+}
+.category-dropdown.show .dropdown-toggle {
+  color: #fff;
+  background-color: var(--colorCustom) !important;
+}
+.category-dropdown .dropdown-toggle:hover,
+.category-dropdown .dropdown-toggle:focus {
+  color: #fff;
+  background-color: var(--colorCustom) !important;
+}
+
+/* bottom header hover line */
+.header-bottom .menu > li > a:before {
+  background-color: var(--colorCustom) !important;
+}
+/* intro slide price */
+.text-primary {
+  color: var(--colorCustom) !important;
+}
+
+/* intro slide button */
+.intro-slide .btn-primary:hover,
+.intro-slide .btn-primary:focus {
+  color: #fff !important;
+  background-color: var(--colorCustom) !important;
+  border-color: var(--colorCustom) !important;
+}
+
+/* add to whishlist hover and focus */
+.product.product-11 .btn-product-icon:hover,
+.product.product-11 .btn-product-icon:focus {
+  color: #fff !important;
+  background-color: var(--colorCustom) !important;
+  border-color: var(--colorCustom) !important;
+}
+/* add to cart hovers and focus*/
+.product.product-11 .btn-product:hover,
+.product.product-11 .btn-product:focus {
+  color: #fff !important;
+  border-color: var(--colorCustom) !important;
+  background-color: var(--colorCustom) !important;
+}
+
+/* price */
+.new-price {
+  color: var(--colorCustom) !important;
+  margin-right: 0.8rem;
+}
+
+/* signIn/register */
+.btn-outline-primary-2 {
+  color: var(--colorCustom);
+  background-color: transparent;
+  background-image: none;
+  border-color: var(--colorCustom);
+  box-shadow: none;
+}
+.btn-outline-primary-2:hover,
+.btn-outline-primary-2:focus,
+.btn-outline-primary-2.focus,
+.btn-outline-primary-2:not(:disabled):not(.disabled):active,
+.btn-outline-primary-2:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary-2.dropdown-toggle {
+  color: #fff;
+  background-color: var(--colorCustom);
+  border-color: var(--colorCustom);
+  box-shadow: none;
+}
+
+/* forgot password send verification code button */
+/* .btn-primary {
+  color: #fff;
+  background-color: var(--colorCustom) !important;
+  border-color: var(--colorCustom) !important;
+  box-shadow: none;
+} */
+
+.close:hover,
+.close:focus {
+  color: var(--colorCustom) !important;
+}
+
+.product-price {
+  color: var(--colorCustom) !important;
+}
+
+.btn-product-icon {
+  color: var(--colorCustom) !important;
+}
+
+.btn-product-icon:hover,
+.btn-product-icon:focus {
+  color: #fff !important;
+  background-color: var(--colorCustom) !important;
+}
+
+.product.product-7 .btn-product {
+  color: var(--colorCustom) !important;
+}
+
+.product.product-7 .btn-product span {
+  color: var(--colorCustom) !important;
+}
+
+.product.product-7 .btn-product:hover,
+.product.product-7 .btn-product:focus {
+  color: #fff !important;
+  background-color: var(--colorCustom) !important ;
+  border-bottom-color: var(--colorCustom) !important;
+}
+
+.product.product-7 .btn-product:hover span,
+.product.product-7 .btn-product:focus span {
+  color: #fff !important;
+  box-shadow: none;
+}
+
+.intro-slide .btn-primary {
+  color: #fff !important;
+  background-color: transparent;
+  border-color: #fff;
+}
+
+.nav.nav-pills-mobile .nav-link.active,
+.nav.nav-pills-mobile .nav-link:hover,
+.nav.nav-pills-mobile .nav-link:focus {
+  color: var(--colorCustom);
+  border-bottom-color: var(--colorCustom);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--colorCustom);
+  border-color: var(--colorCustom);
+  box-shadow: none;
+}
+
+.social-icon:hover,
+.social-icon:focus {
+  color: var(--colorCustom);
+  border-color: var(--colorCustom);
+}
+
+.mobile-menu-light .mobile-search .form-control:focus {
+  border-color: var(--colorCustom);
+}

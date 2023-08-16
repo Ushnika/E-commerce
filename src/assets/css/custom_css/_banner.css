@@ -1,0 +1,26 @@
+/* banner image (home page) */
+.banner-group .row > div:nth-child(1) .banner img {
+  height: 500px;
+  object-fit: cover;
+}
+.banner-group .row > div:nth-child(2) .banner img {
+  height: 500px;
+  object-fit: cover;
+}
+
+.banner-group .row > div:nth-child(3) .banner:nth-child(1) img {
+  height: 240px;
+  object-fit: cover;
+}
+.banner-group .row > div:nth-child(3) .banner:nth-child(2) img {
+  height: 240px;
+  object-fit: cover;
+}
+.banner-group .row > div:nth-child(3) .banner .overlay:nth-child(1) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+  height: 240px;
+}
+.banner-group .row > div:nth-child(3) .banner .overlay:nth-child(2) img {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86));
+  object-fit: cover;
+}

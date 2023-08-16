@@ -1,13 +1,15 @@
 import React from "react";
-import CheckoutDetails from "./Checkout/CheckoutDetails";
+import CheckoutDetails from "../components/Checkout/CheckoutDetails";
 
-export default function Checkout() {
+const Checkout = () => {
   return (
     <div>
       <CheckoutDetails />
       <button id="scroll-top" title="Back to Top">
-        <i class="icon-arrow-up"></i>
+        <i className="icon-arrow-up"></i>
       </button>
     </div>
   );
-}
+};
+
+export default Checkout;

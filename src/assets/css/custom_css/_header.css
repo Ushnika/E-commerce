@@ -1,0 +1,12 @@
+.header-2 .header-top {
+  padding: 0.5rem;
+}
+
+.menu.sf-arrows .sf-with-ul::after {
+  content: none;
+}
+
+.header-2 .logo {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}

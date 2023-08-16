@@ -1,10 +1,12 @@
 import React from "react";
-import Accounts from "./Account/Accounts";
+import Accounts from "../components/Account/Accounts";
 
-export default function MyAccount() {
+const MyAccount = () => {
   return (
     <div>
       <Accounts />
     </div>
   );
-}
+};
+
+export default MyAccount;

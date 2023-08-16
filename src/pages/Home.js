@@ -1,30 +1,26 @@
-import React, { useEffect, useState } from "react";
-import Advertisement from "./Home/Advertisement";
-import Banner from "./Home/Banner";
-import BlogPage from "./Home/BlogPage";
-import Slider from "./Home/Slider";
-import TabProducts from "./Home/TabProducts";
-import TopProducts from "./Home/TopProducts";
-import Navbar from "./Navbar";
-import Popup from "./Popup";
-import Footer from "./Footer";
+import React from "react";
+import Banner from "../components/Home/Banner";
+// import BlogPage from "../components/Home/BlogPage";
+import Slider from "../components/Home/SliderContainer";
+import TabProducts from "../components/Home/TabProducts";
+import TopProducts from "../components/Home/TopProducts";
+import Service from "../components/Home/Service";
 
-export default function Home({}) {
-  useEffect(() => {
-    // window.location.reload();
-  }, []);
-
+const Home = () => {
   return (
     <div>
       <Slider />
       <Banner />
       <TabProducts />
-      <Advertisement />
+      {/* <Advertisement /> */}
       <TopProducts />
-      <BlogPage />
+      {/* <BlogPage /> */}
+      <Service />
       <button id="scroll-top" title="Back to Top">
-        <i class="icon-arrow-up"></i>
+        <i className="icon-arrow-up"></i>
       </button>
     </div>
   );
-}
+};
+
+export default Home;
